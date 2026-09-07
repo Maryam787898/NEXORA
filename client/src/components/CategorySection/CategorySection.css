@@ -1,0 +1,273 @@
+/* Category Section Base Layout */
+.category-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #0d0d12;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.category-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styling */
+.category-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.category-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.category-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+}
+
+.category-title-underline {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, #64748b);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Responsive Grid Layout */
+/* Desktop: 4 cards per row */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Category Card Container */
+.category-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1a24;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Card Link Container */
+.category-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 380px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* Image & Visual Wrapper */
+.category-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.08);
+}
+
+/* Placeholder Backdrop Visual */
+.category-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 1;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .category-placeholder {
+  transform: scale(1.05);
+}
+
+.category-placeholder-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.category-placeholder-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+
+/* Overlay gradient for contrast */
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.category-card:hover .category-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+
+/* Glassmorphism Badge */
+.category-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  z-index: 2;
+}
+
+/* Content Area */
+.category-content {
+  position: relative;
+  margin-top: auto;
+  padding: 24px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.category-description {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+/* CTA Link / Button */
+.category-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 6px;
+  transition: color 0.3s ease;
+}
+
+.category-cta-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .category-cta-icon {
+  transform: translateX(6px);
+}
+
+.category-card:hover .category-cta {
+  color: #38bdf8;
+}
+
+/* Media Queries */
+
+/* Tablet: 2 cards per row */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .category-card-link {
+    height: 340px;
+  }
+
+  .category-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 640px) {
+  .category-section {
+    padding: 50px 0;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .category-card-link {
+    height: 300px;
+  }
+
+  .category-header {
+    margin-bottom: 32px;
+  }
+
+  .category-title {
+    font-size: 1.75rem;
+  }
+}

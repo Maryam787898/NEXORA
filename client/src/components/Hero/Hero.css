@@ -1,0 +1,119 @@
+.hero {
+	background: #f5f1ea;
+	color: #1f2933;
+	padding: 72px 0;
+}
+
+.hero-container {
+	width: min(1120px, 90%);
+	min-height: 520px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+	align-items: center;
+	gap: 64px;
+}
+
+.hero-content {
+	max-width: 600px;
+}
+
+.hero-eyebrow {
+	margin: 0 0 18px;
+	color: #9a3412;
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+}
+
+.hero h1 {
+	margin: 0;
+	color: #17202a;
+	font-size: clamp(3rem, 7vw, 5.8rem);
+	line-height: 0.98;
+	font-weight: 800;
+}
+
+.hero-description {
+	max-width: 480px;
+	margin: 28px 0 0;
+	color: #52606d;
+	font-size: 1.05rem;
+	line-height: 1.7;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 32px;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 46px;
+	padding: 0 22px;
+	border: 1px solid transparent;
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 700;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-primary-btn {
+	background: #1f2933;
+	color: #ffffff;
+}
+
+.hero-primary-btn:hover {
+	background: #9a3412;
+}
+
+.hero-secondary-btn {
+	border-color: #1f2933;
+	color: #1f2933;
+}
+
+.hero-secondary-btn:hover {
+	background: #1f2933;
+	color: #ffffff;
+}
+
+.hero-visual {
+	min-height: 440px;
+}
+
+.hero-image-placeholder {
+	min-height: 440px;
+	display: grid;
+	place-items: center;
+	background: #d8c7b5;
+	color: #6b3f2a;
+	font-size: 0.8rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+}
+
+@media (max-width: 760px) {
+	.hero {
+		padding: 52px 0;
+	}
+
+	.hero-container {
+		min-height: 0;
+		grid-template-columns: 1fr;
+		gap: 36px;
+	}
+
+	.hero h1 {
+		font-size: clamp(2.8rem, 14vw, 4.5rem);
+	}
+
+	.hero-visual,
+	.hero-image-placeholder {
+		min-height: 280px;
+	}
+}

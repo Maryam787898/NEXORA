@@ -1,0 +1,500 @@
+/* Order Details Page Styling */
+.order-details-page {
+  width: 100%;
+  padding: 40px 0 80px;
+  background-color: #0b0b10;
+  color: #ffffff;
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.order-details-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.order-details-nav {
+  margin-bottom: 24px;
+}
+
+.back-to-orders-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.back-to-orders-link:hover {
+  color: #ffffff;
+}
+
+.order-details-header {
+  background-color: #12131a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.order-status-timeline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 18px 20px;
+  background: #12131a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+.timeline-step.complete { color: #94a3b8; }
+.timeline-step.current { color: #60a5fa; font-weight: 700; }
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.timeline-step.complete .timeline-dot { background: currentColor; }
+
+.timeline-cancelled {
+  width: 100%;
+  color: #f87171;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .order-status-timeline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.order-headline h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+
+.order-headline p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.order-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Items Card */
+.order-items-card {
+  background-color: #12131a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.order-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.order-items-table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.order-detail-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.item-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #1a1b24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.item-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #ffffff;
+}
+
+.item-meta {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.item-price-col {
+  text-align: right;
+}
+
+.item-unit-price {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.item-total-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2px;
+}
+
+/* Sidebar Section */
+.order-sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.order-info-box {
+  background-color: #12131a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.info-box-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.address-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.breakdown-item.total {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding-top: 12px;
+  margin-top: 6px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+/* Cancel Action */
+.btn-cancel-order {
+  width: 100%;
+  padding: 14px;
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.btn-cancel-order:hover:not(:disabled) {
+  background-color: rgba(239, 68, 68, 0.22);
+  color: #ffffff;
+}
+
+.btn-cancel-order:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancellation-success {
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .order-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Payment Detail Block ────────────────────────────────────────────────── */
+.payment-details-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.payment-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.payment-detail-row span:last-child {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* Payment Status Badges (scoped inside OrderDetails) */
+.payment-badge.pending  { background: rgba(148,163,184,0.1); color: #94a3b8; }
+.payment-badge.paid     { background: rgba(16,185,129,0.12); color: #34d399; }
+.payment-badge.failed   { background: rgba(239,68,68,0.1);   color: #f87171; }
+.payment-badge.refunded { background: rgba(168,85,247,0.1);  color: #c084fc; }
+
+/* ── Pay Now Button ──────────────────────────────────────────────────────── */
+.btn-pay-now {
+  width: 100%;
+  padding: 14px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-pay-now:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Simulated Payment Modal ─────────────────────────────────────────────── */
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.payment-modal-inner {
+  background: #12131a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 36px 32px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.payment-modal-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.payment-modal-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.payment-modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.payment-modal-header p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.payment-modal-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.pm-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.pm-detail-row span:last-child {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.payment-modal-notice {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0 0 24px;
+}
+
+.payment-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-confirm-payment {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-confirm-payment:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-confirm-payment:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-cancel-payment {
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel-payment:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.btn-cancel-payment:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* checkout-error-banner reuse inside OrderDetails */
+.checkout-error-banner {
+  background-color: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Cancelled notice ────────────────────────────────────────────────────── */
+.order-cancelled-notice {
+  margin-top: 16px;
+  padding: 10px;
+  text-align: center;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Pay Now disabled state ──────────────────────────────────────────────── */
+.btn-pay-now:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
