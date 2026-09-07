@@ -16,7 +16,10 @@ app.use(helmet());
 
 // ─── CORS ─────────────────────────────────────────────────────────────────────
 // In development CLIENT_URL defaults to localhost:5173.
-// In production set CLIENT_URL to the real frontend origin in .env.
+// Production deployments must provide the real frontend origin explicitly.
+if (process.env.NODE_ENV === "production" && !process.env.CLIENT_URL) {
+  throw new Error("CLIENT_URL must be configured in production.");
+}
 const allowedOrigin = process.env.CLIENT_URL || "http://localhost:5173";
 
 app.use(

@@ -1,8 +1,6 @@
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
-import app from "./app.js";
-import connectDB from "./config/db.js";
 
 // Resolve __dirname for ES Modules (not available by default)
 const __filename = fileURLToPath(import.meta.url);
@@ -10,6 +8,10 @@ const __dirname = dirname(__filename);
 
 // Load .env from the server root (one level above src/)
 dotenv.config({ path: resolve(__dirname, "../.env") });
+
+// Load environment variables before importing modules that read them at startup.
+const { default: app } = await import("./app.js");
+const { default: connectDB } = await import("./config/db.js");
 
 const PORT = process.env.PORT || 5000;
 
