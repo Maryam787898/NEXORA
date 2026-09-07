@@ -9,7 +9,7 @@ const connectDB = async () => {
 
   if (!mongoURI) {
     console.error("❌ MONGO_URI is not defined in environment variables.");
-    process.exit(1);
+    throw new Error("MONGO_URI is not defined in environment variables.");
   }
 
   try {
@@ -18,7 +18,7 @@ const connectDB = async () => {
     return conn;
   } catch (error) {
     console.error(`❌ MongoDB Connection Error: ${error.message}`);
-    process.exit(1);
+    throw error;
   }
 };
 
