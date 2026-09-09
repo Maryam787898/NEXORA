@@ -2,6 +2,8 @@
     width: 100%;
     background-color: black;
     color: white;
+    position: relative;
+    z-index: 50;
 }
 
 .navbar-container {
@@ -13,6 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
 }
 
 .navbar-logo {
@@ -20,12 +23,15 @@
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
 .navbar-links {
     display: flex;
     align-items: center;
     gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navbar-links a {
@@ -41,7 +47,9 @@
 .navbar-actions {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 20px;
+    flex-shrink: 0;
 }
 
 .navbar-actions a {
@@ -49,14 +57,64 @@
     text-decoration: none;
 }
 
+.navbar-icon {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 .navbar-cart {
     position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.navbar-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.user-greeting {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
 }
 
 .cart-count {
     position: absolute;
-    top: -10px;
-    right: -12px;
+    top: -8px;
+    right: -10px;
 
     width: 18px;
     height: 18px;
@@ -71,4 +129,229 @@
     color: black;
 
     font-size: 10px;
+}
+
+.navbar-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar-menu-lines {
+    width: 18px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar-menu-lines span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+}
+
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+}
+
+.mobile-menu-overlay.open {
+    display: block;
+}
+
+.mobile-menu-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(360px, calc(100vw - 16px));
+    height: 100vh;
+    max-width: 100%;
+    background-color: #0f172a;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -12px 0 30px rgba(0, 0, 0, 0.35);
+    padding: 20px 16px 24px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+}
+
+.mobile-menu-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.mobile-menu-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.mobile-navbar-links,
+.mobile-menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-menu-link,
+.mobile-menu-logout {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.mobile-menu-link.active {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #60a5fa;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-logout:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.mobile-menu-actions {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-account-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 6px 10px;
+}
+
+.mobile-account-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.mobile-user-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.mobile-menu-logout {
+    justify-content: center;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.35);
+    color: #f87171;
+    cursor: pointer;
+}
+
+.mobile-menu-login {
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .navbar-container {
+        width: calc(100% - 16px);
+        min-height: 60px;
+        gap: 10px;
+    }
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-actions {
+        gap: 6px;
+    }
+
+    .navbar-user,
+    .navbar-login {
+        display: none;
+    }
+
+    .navbar-cart,
+    .navbar-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .navbar-menu-toggle {
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 430px) {
+    .navbar-container {
+        width: calc(100% - 12px);
+        gap: 8px;
+    }
+
+    .navbar-logo {
+        font-size: 18px;
+    }
+
+    .navbar-actions {
+        gap: 4px;
+    }
+
+    .navbar-cart,
+    .navbar-icon,
+    .navbar-menu-toggle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-user {
+        display: none !important;
+    }
+
+    .cart-count {
+        right: -8px;
+    }
 }

@@ -6,6 +6,7 @@
   color: #ffffff;
   min-height: 85vh;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .nexora-loading-state,
@@ -139,6 +140,11 @@
   grid-template-columns: 260px 1fr;
   gap: 36px;
   align-items: start;
+  min-width: 0;
+}
+
+.shop-catalog-area {
+  min-width: 0;
 }
 
 /* Desktop Sidebar Styling */
@@ -332,6 +338,8 @@
   font-size: 0.95rem;
   color: #94a3b8;
   font-weight: 500;
+  max-width: 100%;
+  line-height: 1.45;
 }
 
 .results-count strong {
@@ -436,6 +444,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px 24px;
+  min-width: 0;
+}
+
+.catalog-grid > * {
+  min-width: 0;
 }
 
 /* Empty Catalog State */
@@ -580,5 +593,88 @@
   .toolbar-controls {
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 414px) {
+  .shop-container {
+    width: calc(100% - 20px);
+  }
+
+  .shop-search-bar {
+    max-width: none;
+  }
+
+  .shop-search-input {
+    font-size: 0.9rem;
+  }
+
+  .catalog-toolbar {
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .results-count {
+    font-size: 0.87rem;
+  }
+
+  .toolbar-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sort-select-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .sort-label {
+    font-size: 0.8rem;
+  }
+
+  .sort-select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .btn-mobile-filter {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .active-filter-chips {
+    gap: 6px;
+  }
+
+  .chip-item {
+    max-width: 100%;
+    font-size: 0.76rem;
+  }
+
+  .price-inputs-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .price-separator {
+    display: none;
+  }
+
+  .price-input-field {
+    width: 100%;
+  }
+
+  .mobile-drawer-content {
+    width: min(320px, calc(100vw - 16px));
+    max-width: calc(100vw - 16px);
+    padding: 18px 14px;
+  }
+
+  .mobile-drawer-header {
+    padding-bottom: 10px;
   }
 }

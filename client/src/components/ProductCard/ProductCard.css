@@ -6,6 +6,7 @@
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  min-width: 0;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.35s ease;
@@ -153,6 +154,7 @@
   flex-direction: column;
   flex-grow: 1;
   gap: 10px;
+  min-width: 0;
 }
 
 .product-card-meta {
@@ -196,6 +198,9 @@
   margin: 0;
   line-height: 1.35;
   color: #ffffff;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .product-card-title a {
@@ -215,12 +220,15 @@
   justify-content: space-between;
   margin-top: auto;
   padding-top: 10px;
+  gap: 10px;
 }
 
 .product-card-pricing {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .product-card-price {
@@ -239,6 +247,7 @@
 .product-card-add-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   background-color: #27273a;
   color: #ffffff;
@@ -248,6 +257,8 @@
   font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
+  min-height: 42px;
+  min-width: 92px;
   transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 
@@ -260,4 +271,61 @@
 
 .product-card-add-btn:active {
   transform: scale(0.96);
+}
+
+@media (max-width: 414px) {
+  .product-card-content {
+    padding: 14px 12px 16px;
+  }
+
+  .product-card-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .product-card-rating {
+    font-size: 0.72rem;
+  }
+
+  .product-card-title {
+    font-size: 0.98rem;
+  }
+
+  .product-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-card-pricing {
+    justify-content: space-between;
+  }
+
+  .product-card-price {
+    font-size: 1.05rem;
+  }
+
+  .product-card-old-price {
+    font-size: 0.78rem;
+  }
+
+  .product-card-add-btn {
+    width: 100%;
+    min-height: 44px;
+    min-width: 0;
+  }
+
+  .product-card-badge {
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    font-size: 0.62rem;
+  }
+
+  .product-card-wishlist-btn {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
 }

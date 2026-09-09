@@ -319,6 +319,46 @@
   }
 }
 
+@media (max-width: 360px) {
+  .orders-container {
+    width: calc(100% - 20px);
+  }
+
+  .order-card-header,
+  .order-card-body,
+  .order-card-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .order-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-cancel-order,
+  .btn-view-order {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .order-items-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .order-item-tile {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .order-item-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+
 /* Additional payment badge states */
 .payment-badge.pending {
   background: rgba(148, 163, 184, 0.1);

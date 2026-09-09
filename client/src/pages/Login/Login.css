@@ -6,6 +6,7 @@
   padding: 2rem;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  box-sizing: border-box;
 }
 
 .auth-container {
@@ -15,6 +16,7 @@
   padding: 3rem 2.5rem;
   width: 100%;
   max-width: 480px;
+  box-sizing: border-box;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -117,4 +119,14 @@
 
 .auth-toggle button:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 1rem;
+  }
+
+  .auth-container {
+    padding: 2rem 1rem;
+  }
 }

@@ -289,6 +289,34 @@
   }
 }
 
+@media (max-width: 420px) {
+  .order-details-header {
+    padding: 20px 18px;
+  }
+
+  .order-items-card {
+    padding: 18px;
+  }
+
+  .order-detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-left {
+    width: 100%;
+  }
+
+  .item-price-col {
+    width: 100%;
+    text-align: left;
+  }
+
+  .order-headline h1 {
+    font-size: 1.5rem;
+  }
+}
+
 /* ── Payment Detail Block ────────────────────────────────────────────────── */
 .payment-details-block {
   display: flex;
