@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import API from "../../api/axios";
@@ -26,19 +26,28 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const fetchRequestRef = useRef(0);
 
   // Fetch products from API on mount
   const fetchProducts = async () => {
+    const requestId = ++fetchRequestRef.current;
+
     try {
       setLoading(true);
       setError("");
       const { data } = await API.get("/products");
-      if (data.success) setProducts(data.data || []);
+      if (requestId !== fetchRequestRef.current) return;
+      if (data.success) {
+        setProducts(data.data || []);
+      } else {
+        setError("Unable to load products. Please try again.");
+      }
     } catch (fetchError) {
+      if (requestId !== fetchRequestRef.current) return;
       console.error("Error fetching products for shop:", fetchError);
       setError("Unable to load products. Please try again.");
     } finally {
-      setLoading(false);
+      if (requestId === fetchRequestRef.current) setLoading(false);
     }
   };
 
@@ -135,7 +144,7 @@ const Shop = () => {
         }
         return 0; // "featured" keeps original dataset order
       });
-  }, [searchQuery, selectedCategory, minPriceVal, maxPriceVal, minRatingVal, sortOption]);
+  }, [products, searchQuery, selectedCategory, minPriceVal, maxPriceVal, minRatingVal, sortOption]);
 
   const hasActiveFilters =
     searchQuery !== "" ||
