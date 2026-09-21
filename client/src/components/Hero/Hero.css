@@ -140,11 +140,12 @@
 
 	.hero-visual,
 	.hero-image-placeholder {
-		min-height: 280px;
+		min-height: 0;
 	}
 
 	.hero-image-placeholder img {
-		height: 280px;
+		height: auto;
+		object-fit: contain;
 	}
 }
 
@@ -174,10 +175,10 @@
 	}
 
 	.hero-image-placeholder {
-		min-height: 220px;
+		min-height: 0;
 	}
 
 	.hero-image-placeholder img {
-		height: 220px;
+		height: auto;
 	}
 }
