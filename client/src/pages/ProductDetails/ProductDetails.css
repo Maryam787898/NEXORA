@@ -111,6 +111,11 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+  opacity: 0;
+}
+
+.product-main-placeholder.active {
+  opacity: 1;
 }
 
 .placeholder-big-icon {
