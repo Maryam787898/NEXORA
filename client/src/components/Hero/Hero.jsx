@@ -36,7 +36,7 @@ const Hero = () => {
 
                 <div className="hero-visual">
                     <div className="hero-image-placeholder">
-                        <span>HERO IMAGE</span>
+                        <img src="/assets/hero/hero_image.jpg" alt="Featured fashion collection" />
                     </div>
                 </div>
 
